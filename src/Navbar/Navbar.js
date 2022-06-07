@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { pizzaRed } from "../styles/colors";
+import { blitzPizzaTheme } from "../styles/colors";
 import { Title } from "../styles/title";
 const NavbarStyled = styled.div`
-  background-color: ${pizzaRed};
+  background-color: ${blitzPizzaTheme};
   padding: 10px;
+  position: fixed;
+  width: 100%;
 `;
 
 const Logo = styled(Title)`
   font-size: 20px;
-  color: #fff;
+  color: #f44336;
   text-shadow: 1px 1px 1px black;
 `;
 
