@@ -7,7 +7,7 @@ export const MenuData = [
   {
     id: 2,
     name: "Blitz Burger",
-    img: "/assets/Menu-Items/Burger2jpg",
+    img: "/assets/Menu-Items/Burger2.jpg",
   },
   {
     id: 3,
