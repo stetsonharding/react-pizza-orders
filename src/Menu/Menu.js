@@ -6,7 +6,6 @@ import { FoodImage } from "../MenuGrid/MenuGrid";
 import { MenuData } from "../Data/MenuData";
 
 const FoodMenuStyled = styled.div`
-  border: 1px solid black;
   margin: 0 400px 50px 20px;
   height: 1000px;
 `;
@@ -15,6 +14,7 @@ export function FoodMenu() {
   return (
     <>
       <FoodMenuStyled>
+        <h1>Blitz Menu - Flavors for royalty. </h1>
         <FoodGrid>
           {MenuData.map((foodItem) => {
             return (
