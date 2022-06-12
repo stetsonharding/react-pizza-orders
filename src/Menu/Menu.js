@@ -6,8 +6,8 @@ import { FoodGrid, FoodImage, FoodLabel } from "../MenuGrid/MenuGrid";
 import { foodSections } from "../Data/MenuData";
 
 const FoodMenuStyled = styled.div`
-  margin: 0 400px 50px 20px;
-  height: 1000px;
+  margin: 0 600px 50px 20px;
+  height: 1250px auto;
 `;
 
 export function FoodMenu() {

@@ -4,11 +4,11 @@ import { Title } from "../styles/title";
 export const FoodGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const FoodImage = styled(Title)`
-  height: 200px;
+  height: 150px;
   background-image: ${({ img }) => `url(${img});`};
   color: #3c1361;
   padding: 15px;
@@ -18,9 +18,14 @@ export const FoodImage = styled(Title)`
   letter-spacing: 1px;
   font-size: 20px;
   border-radius: 20px;
+  transition-property: opacity, margin-bottom;
+  transition-duration: 0.2s;
+  box-shadow: 0 0 2px 0 grey;
+  margin-top: 5px;
   &:hover {
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.8;
+    margin-top: 0px;
   }
 `;
 
