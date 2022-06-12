@@ -17,6 +17,7 @@ export function FoodMenu() {
         <h1 style={{ textAlign: "center" }}>
           Blitz Menu - Flavors for royalty.
         </h1>
+        {/* iterating over key value pairs, displaying section name and food image */}
         {Object.entries(foodSections).map(([sectionsName, foodItems]) => (
           <>
             <h2>{sectionsName}</h2>

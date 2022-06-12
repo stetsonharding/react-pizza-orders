@@ -49,15 +49,16 @@ export const MenuData = [
   },
 ];
 
-/*Splitting Menu Data in to food sections, based on the section key value pair.*/
-
+/*Split Menu Data in to food sections*/
 export const foodSections = MenuData.reduce((sections, item) => {
+  //create object with key as section name and value to empty array.
   if (!sections[item.section]) {
     sections[item.section] = [];
   }
-
+  //if object of section is found, push item onto array thats been created for that particular section.
   sections[item.section].push(item);
 
+  //return object of arrays.
   return sections;
 }, {});
 
