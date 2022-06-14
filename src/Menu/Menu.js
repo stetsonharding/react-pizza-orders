@@ -10,7 +10,7 @@ const FoodMenuStyled = styled.div`
   height: 1250px auto;
 `;
 
-export function FoodMenu() {
+export function FoodMenu({ setOpenFood }) {
   return (
     <>
       <FoodMenuStyled>
@@ -23,7 +23,7 @@ export function FoodMenu() {
             <h2>{sectionsName}</h2>
             <FoodGrid>
               {foodItems.map((item) => (
-                <FoodImage img={item.img}>
+                <FoodImage onClick={() => setOpenFood(item)} img={item.img}>
                   <FoodLabel>{item.name}</FoodLabel>
                 </FoodImage>
               ))}
