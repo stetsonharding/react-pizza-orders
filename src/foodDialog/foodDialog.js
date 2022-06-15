@@ -21,6 +21,7 @@ const DialogShadow = styled.div`
   background-color: black;
   opacity: 0.7;
   z-index: 4;
+  cursor: pointer;
 `;
 
 const DialogBanner = styled.div`
@@ -30,16 +31,28 @@ const DialogBanner = styled.div`
   background-position: center;
 `;
 
-export function FoodDialog({ openFood }) {
+const DialogBannerName = styled(FoodLabel)`
+  padding: 5px 25px;
+  position: absolute;
+  top: 50px;
+  font-size: 22px;
+`;
+
+export function FoodDialog({ openFood, setOpenFood }) {
+  //Close Dialog box
+  const CloseDialog = () => {
+    setOpenFood();
+  };
+
   return (
     openFood && (
       <>
         <Dialog>
           <DialogBanner img={openFood.img}>
-            <FoodLabel>{openFood.name}</FoodLabel>
+            <DialogBannerName>{openFood.name}</DialogBannerName>
           </DialogBanner>
         </Dialog>
-        <DialogShadow />
+        <DialogShadow onClick={CloseDialog} />
       </>
     )
   );

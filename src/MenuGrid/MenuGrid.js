@@ -7,7 +7,7 @@ export const FoodGrid = styled.div`
   gap: 10px;
 `;
 
-export const FoodImage = styled(Title)`
+export const FoodImage = styled.div`
   height: 150px;
   background-image: ${({ img }) => `url(${img});`};
   color: #3c1361;
@@ -29,7 +29,7 @@ export const FoodImage = styled(Title)`
   }
 `;
 
-export const FoodLabel = styled.div`
+export const FoodLabel = styled(Title)`
   width: fit-content;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 5px;
