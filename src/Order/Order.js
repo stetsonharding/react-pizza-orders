@@ -22,11 +22,15 @@ const OrderContent = styled(DialogInformation)`
   overflow: auto;
 `;
 
-export function Order() {
+export function Order({ orders }) {
   return (
     <OrderStyled>
       <OrderContent>
-        you're order looks pretty empty, let's fix that.
+        {orders.length !== 0 ? (
+          orders.map((order) => <p>{order.name}</p>)
+        ) : (
+          <p>you're order looks pretty empty, let's fix that.</p>
+        )}
       </OrderContent>
       <DialogFooter>
         <ConfirmButton>Checkout</ConfirmButton>

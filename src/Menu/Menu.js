@@ -10,7 +10,7 @@ const FoodMenuStyled = styled.div`
   height: 1250px auto;
 `;
 
-export function FoodMenu({ setOpenFood }) {
+export function FoodMenu({ openFood, setOpenFood }) {
   return (
     <>
       <FoodMenuStyled>

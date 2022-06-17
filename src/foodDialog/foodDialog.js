@@ -67,10 +67,16 @@ const DialogBannerName = styled(FoodLabel)`
   font-size: 22px;
 `;
 
-export function FoodDialog({ openFood, setOpenFood }) {
+export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
+  console.log(orders);
   //Close Dialog box
   const CloseDialog = () => {
     setOpenFood();
+  };
+
+  const AddToOrder = (order) => {
+    setOrders([...orders, order]);
+    CloseDialog();
   };
 
   return (
@@ -84,7 +90,9 @@ export function FoodDialog({ openFood, setOpenFood }) {
           <DialogInformation></DialogInformation>
 
           <DialogFooter>
-            <ConfirmButton>Add To Order</ConfirmButton>
+            <ConfirmButton onClick={() => AddToOrder(openFood)}>
+              Add To Order
+            </ConfirmButton>
           </DialogFooter>
         </Dialog>
         <DialogShadow onClick={CloseDialog} />

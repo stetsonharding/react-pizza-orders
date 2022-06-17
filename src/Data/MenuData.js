@@ -61,5 +61,3 @@ export const foodSections = MenuData.reduce((sections, item) => {
   //return object of arrays.
   return sections;
 }, {});
-
-console.log(foodSections);
