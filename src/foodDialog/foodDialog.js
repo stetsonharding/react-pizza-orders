@@ -17,13 +17,13 @@ const Dialog = styled.div`
   flex-direction: column;
 `;
 
-const DialogInformation = styled.div`
+export const DialogInformation = styled.div`
   //border: 2px solid blue;
   overflow: auto;
   min-height: 100px;
 `;
 
-const ConfirmButton = styled(Title)`
+export const ConfirmButton = styled(Title)`
   margin: 10px;
   border-radius: 8px;
   color: white;
@@ -35,7 +35,7 @@ const ConfirmButton = styled(Title)`
   cursor: pointer;
 `;
 
-const DialogFooter = styled.footer`
+export const DialogFooter = styled.footer`
   box-shadow: 0px -2px 20px 0px grey;
   //border: 2px solid red;
   height: 60px;
@@ -84,7 +84,7 @@ export function FoodDialog({ openFood, setOpenFood }) {
           <DialogInformation></DialogInformation>
 
           <DialogFooter>
-            <ConfirmButton>Confirm</ConfirmButton>
+            <ConfirmButton>Add To Order</ConfirmButton>
           </DialogFooter>
         </Dialog>
         <DialogShadow onClick={CloseDialog} />
