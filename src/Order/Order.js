@@ -27,7 +27,7 @@ export function Order({ orders }) {
     <OrderStyled>
       <OrderContent>
         {orders.length !== 0 ? (
-          orders.map((order) => <p>{order.name}</p>)
+          orders.map((order) => <p key={order.id}>{order.name}</p>)
         ) : (
           <p>you're order looks pretty empty, let's fix that.</p>
         )}

@@ -19,16 +19,18 @@ export function FoodMenu({ openFood, setOpenFood }) {
         </h1>
         {/* iterating over key value pairs, displaying section name and food image */}
         {Object.entries(foodSections).map(([sectionsName, foodItems]) => (
-          <>
+          <div key={sectionsName}>
             <h2>{sectionsName}</h2>
             <FoodGrid>
               {foodItems.map((item) => (
-                <FoodImage onClick={() => setOpenFood(item)} img={item.img}>
-                  <FoodLabel>{item.name}</FoodLabel>
-                </FoodImage>
+                <div key={item.id}>
+                  <FoodImage onClick={() => setOpenFood(item)} img={item.img}>
+                    <FoodLabel>{item.name}</FoodLabel>
+                  </FoodImage>
+                </div>
               ))}
             </FoodGrid>
-          </>
+          </div>
         ))}
       </FoodMenuStyled>
     </>

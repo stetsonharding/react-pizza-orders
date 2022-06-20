@@ -68,7 +68,6 @@ const DialogBannerName = styled(FoodLabel)`
 `;
 
 export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
-  console.log(orders);
   //Close Dialog box
   const CloseDialog = () => {
     setOpenFood();
