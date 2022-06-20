@@ -22,16 +22,30 @@ const OrderContent = styled(DialogInformation)`
   overflow: auto;
 `;
 
+const OrderContainer = styled.div`
+  padding: 10px 0px;
+  border-bottom: 1px solid black;
+`;
+const OrderItem = styled.div`
+  padding: 10px 0px;
+`;
+
 export function Order({ orders }) {
   return (
     <OrderStyled>
-      <OrderContent>
-        {orders.length !== 0 ? (
-          orders.map((order) => <p key={order.id}>{order.name}</p>)
-        ) : (
-          <p>you're order looks pretty empty, let's fix that.</p>
-        )}
-      </OrderContent>
+      {orders.length === 0 ? (
+        <OrderContent>You have no orders. Lets fix that</OrderContent>
+      ) : (
+        <OrderContent>
+          <OrderContainer>Your Order:</OrderContainer>
+          {orders.map((order) => (
+            <OrderContainer key={order.id}>
+              <OrderItem>{order.name}</OrderItem>
+            </OrderContainer>
+          ))}
+        </OrderContent>
+      )}
+
       <DialogFooter>
         <ConfirmButton>Checkout</ConfirmButton>
       </DialogFooter>
