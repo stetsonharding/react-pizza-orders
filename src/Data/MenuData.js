@@ -1,51 +1,66 @@
+export function formatPrice(price) {
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+}
+
 export const MenuData = [
   {
     id: 1,
     name: "Blitz Classic Burger",
     img: "/assets/Menu-Items/Burger.jpeg",
     section: "sandwitch",
+    price: 10.5,
   },
   {
     id: 2,
     name: "Blitz Burger",
     img: "/assets/Menu-Items/Burger2.jpg",
     section: "sandwitch",
+    price: 13.5,
   },
   {
     id: 3,
     name: "Blitz Chicken Pizza",
     img: "/assets/Menu-Items/ChickenPizza.jpg",
     section: "Pizza",
+    price: 13.84,
   },
   {
     id: 4,
     name: "Blitz Custom Pizza",
     img: "/assets/Menu-Items/pizza2.jpeg",
     section: "Pizza",
+    price: 13.5,
   },
   {
     id: 5,
     name: "Blitz Ribs",
     img: "/assets/Menu-Items/Ribs.jpeg",
     section: "Meats",
+    price: 17.99,
   },
   {
     id: 6,
     name: "Blitz Salad",
     img: "/assets/Menu-Items/salad.jpeg",
     section: "Salad",
+    price: 8.99,
   },
   {
     id: 7,
     name: "Blitz Chicken Sandwitch",
     img: "/assets/Menu-Items/sandwitch.jpeg",
     section: "sandwitch",
+    price: 10.99,
   },
   {
     id: 8,
     name: "Blitz Steak & Fries",
     img: "/assets/Menu-Items/steak.jpeg",
     section: "Meats",
+    price: 19.99,
   },
 ];
 

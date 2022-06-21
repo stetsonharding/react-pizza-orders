@@ -4,6 +4,9 @@ import { FoodLabel } from "../MenuGrid/MenuGrid";
 import { blitzPizzaTheme } from "../styles/colors";
 import { Title } from "../styles/title";
 
+//format price function
+import { formatPrice } from "../Data/MenuData";
+
 const Dialog = styled.div`
   width: 500px;
 
@@ -90,7 +93,7 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
 
           <DialogFooter>
             <ConfirmButton onClick={() => AddToOrder(openFood)}>
-              Add To Order
+              {`Update Order: ${formatPrice(openFood.price)}`}
             </ConfirmButton>
           </DialogFooter>
         </Dialog>

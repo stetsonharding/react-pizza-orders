@@ -4,6 +4,9 @@ import { ConfirmButton } from "../foodDialog/foodDialog";
 import { DialogInformation } from "../foodDialog/foodDialog";
 import { DialogFooter } from "../foodDialog/foodDialog";
 
+//format price function
+import { formatPrice } from "../Data/MenuData";
+
 export const OrderStyled = styled.div`
   position: fixed;
   right: 0px;
@@ -28,6 +31,10 @@ const OrderContainer = styled.div`
 `;
 const OrderItem = styled.div`
   padding: 10px 0px;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 20px 150px 20px 60px;
+  display: flex;
 `;
 
 export function Order({ orders }) {
@@ -40,7 +47,12 @@ export function Order({ orders }) {
           <OrderContainer>Your Order:</OrderContainer>
           {orders.map((order) => (
             <OrderContainer key={order.id}>
-              <OrderItem>{order.name}</OrderItem>
+              <OrderItem>
+                <div>1</div>
+                <div>{order.name}</div>
+                <div />
+                <div>{formatPrice(order.price)}</div>
+              </OrderItem>
             </OrderContainer>
           ))}
         </OrderContent>
