@@ -8,9 +8,13 @@ import { Order } from "./Order/Order";
 import { useOpenFood } from "./Hooks/useOpenFood";
 import { useOrders } from "./Hooks/useOrders";
 
+//Change application title
+import { useTitle } from "./Hooks/useTitle";
 function App() {
   const openFood = useOpenFood();
   const orders = useOrders();
+
+  useTitle({ ...orders, ...openFood });
 
   return (
     <>

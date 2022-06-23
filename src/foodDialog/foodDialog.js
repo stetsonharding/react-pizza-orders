@@ -6,6 +6,8 @@ import { Title } from "../styles/title";
 
 //format price function
 import { formatPrice } from "../Data/MenuData";
+// //Change application title
+// import { useTitle } from "../Hooks/useTitle";
 
 const Dialog = styled.div`
   width: 500px;
@@ -80,6 +82,9 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
     setOrders([...orders, order]);
     CloseDialog();
   };
+
+  //Changes title of application based on users food selection.
+  // useTitle({ orders, openFood });
 
   return (
     openFood && (
