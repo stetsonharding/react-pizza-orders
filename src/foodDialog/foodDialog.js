@@ -4,10 +4,12 @@ import { FoodLabel } from "../MenuGrid/MenuGrid";
 import { blitzPizzaTheme } from "../styles/colors";
 import { Title } from "../styles/title";
 
+import { QuantityInput } from "./QuantityInput";
+
 //format price function
 import { formatPrice } from "../Data/MenuData";
-// //Change application title
-// import { useTitle } from "../Hooks/useTitle";
+
+import { useQuanity } from "../Hooks/useQuantity";
 
 const Dialog = styled.div`
   width: 500px;
@@ -73,6 +75,7 @@ const DialogBannerName = styled(FoodLabel)`
 `;
 
 export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
+  const quantity = useQuanity(openFood && openFood.quantity);
   //Close Dialog box
   const CloseDialog = () => {
     setOpenFood();
@@ -94,7 +97,9 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
             <DialogBannerName>{openFood.name}</DialogBannerName>
           </DialogBanner>
 
-          <DialogInformation></DialogInformation>
+          <DialogInformation>
+            <QuantityInput quantity={quantity} />
+          </DialogInformation>
 
           <DialogFooter>
             <ConfirmButton onClick={() => AddToOrder(openFood)}>
