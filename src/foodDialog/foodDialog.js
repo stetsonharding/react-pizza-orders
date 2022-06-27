@@ -28,6 +28,7 @@ export const DialogInformation = styled.div`
   //border: 2px solid blue;
   overflow: auto;
   min-height: 100px;
+  padding: 10px 40px;
 `;
 
 export const ConfirmButton = styled(Title)`
@@ -74,14 +75,27 @@ const DialogBannerName = styled(FoodLabel)`
   font-size: 22px;
 `;
 
-export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
+//calculating price
+export function getPrice(order) {
+  const calculatedOrder = order.price * order.quantity;
+
+  return calculatedOrder;
+}
+
+function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuanity(openFood && openFood.quantity);
+
   //Close Dialog box
   const CloseDialog = () => {
     setOpenFood();
   };
 
-  const AddToOrder = (order) => {
+  const order = {
+    ...openFood,
+    quantity: quantity.value,
+  };
+
+  const AddToOrder = () => {
     setOrders([...orders, order]);
     CloseDialog();
   };
@@ -102,8 +116,8 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
           </DialogInformation>
 
           <DialogFooter>
-            <ConfirmButton onClick={() => AddToOrder(openFood)}>
-              {`Update Order: ${formatPrice(openFood.price)}`}
+            <ConfirmButton onClick={AddToOrder}>
+              {`Update Order: ${formatPrice(getPrice(order))}`}
             </ConfirmButton>
           </DialogFooter>
         </Dialog>
@@ -111,4 +125,9 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
       </>
     )
   );
+}
+
+export function FoodDialog(props) {
+  if (!props.openFood) return null;
+  return <FoodDialogContainer {...props} />;
 }

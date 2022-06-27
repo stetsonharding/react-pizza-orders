@@ -4,6 +4,8 @@ import { ConfirmButton } from "../foodDialog/foodDialog";
 import { DialogInformation } from "../foodDialog/foodDialog";
 import { DialogFooter } from "../foodDialog/foodDialog";
 
+import { getPrice } from "../foodDialog/foodDialog";
+
 //format price function
 import { formatPrice } from "../Data/MenuData";
 
@@ -48,10 +50,10 @@ export function Order({ orders }) {
           {orders.map((order) => (
             <OrderContainer key={order.id}>
               <OrderItem>
-                <div>1</div>
+                <div>{order.quantity}</div>
                 <div>{order.name}</div>
                 <div />
-                <div>{formatPrice(order.price)}</div>
+                <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
             </OrderContainer>
           ))}
