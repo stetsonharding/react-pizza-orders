@@ -5,6 +5,7 @@ import { blitzPizzaTheme } from "../styles/colors";
 import { Title } from "../styles/title";
 
 import { QuantityInput } from "./QuantityInput";
+import { Toppings } from "./Toppings";
 
 //format price function
 import { formatPrice } from "../Data/MenuData";
@@ -100,8 +101,10 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     CloseDialog();
   };
 
-  //Changes title of application based on users food selection.
-  // useTitle({ orders, openFood });
+  //shows and hides extra toppings based on if food selection is pizza or not.
+  function hasToppings(food) {
+    return food.section === "Pizza";
+  }
 
   return (
     openFood && (
@@ -113,6 +116,15 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
 
           <DialogInformation>
             <QuantityInput quantity={quantity} />
+          </DialogInformation>
+
+          <DialogInformation>
+            {hasToppings(openFood) && (
+              <>
+                <h3>Would you like to add extra Toppings?</h3>
+                <Toppings />
+              </>
+            )}
           </DialogInformation>
 
           <DialogFooter>
