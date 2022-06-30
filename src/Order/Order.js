@@ -70,13 +70,26 @@ export function Order({ orders }) {
           ))}
           <OrderContainer>
             <OrderItem>
+              <div />
+              <div>Subtotal:</div>
+              <div>{formatPrice(subTotal)}</div>
+              <div />
+            </OrderItem>
+            <OrderItem>
+              <div />
+              <div>Taxes:</div>
+              <div>{formatPrice(tax)}</div>
+              <div />
+            </OrderItem>
+            <OrderItem>
+              <div />
               <div>
-                <div> Sub-Total: {formatPrice(subTotal)} </div>
-                <div>Tax: {formatPrice(tax)}</div>
-                <div>
-                  <strong>Grand Total: {formatPrice(total)}</strong>
-                </div>
+                <strong>Grand Total:</strong>
               </div>
+              <div>
+                <strong>{formatPrice(total)}</strong>
+              </div>
+              <div />
             </OrderItem>
           </OrderContainer>
         </OrderContent>
