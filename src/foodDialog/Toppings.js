@@ -17,15 +17,18 @@ const CheckboxLabel = styled.label`
   letter-spacing: 1px;
 `;
 
-export function Toppings({ toppings }) {
+export function Toppings({ toppings, checkTopping }) {
   console.log(toppings);
   return (
     <ToppingContainer>
-      {toppings.map((topping) => {
+      {toppings.map((topping, index) => {
         return (
           <div key={topping.name}>
             <CheckboxLabel>
-              <ToppingCheckbox onClick={() => console.log("hello")} />
+              <ToppingCheckbox
+                checked={topping.checked}
+                onChange={() => checkTopping(index)}
+              />
               {topping.name}
             </CheckboxLabel>
           </div>

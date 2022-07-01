@@ -32,6 +32,7 @@ export const DialogInformation = styled.div`
   overflow: auto;
   min-height: 40px;
   padding: 10px 40px;
+  margin-bottom: 10px;
 `;
 
 export const ConfirmButton = styled(Title)`
