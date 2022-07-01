@@ -17,15 +17,20 @@ const CheckboxLabel = styled.label`
   letter-spacing: 1px;
 `;
 
-export function Toppings() {
+export function Toppings({ toppings }) {
+  console.log(toppings);
   return (
     <ToppingContainer>
-      <div>
-        <CheckboxLabel>
-          <ToppingCheckbox />
-          <span>Pepporoni</span>
-        </CheckboxLabel>
-      </div>
+      {toppings.map((topping) => {
+        return (
+          <div key={topping.name}>
+            <CheckboxLabel>
+              <ToppingCheckbox onClick={() => console.log("hello")} />
+              {topping.name}
+            </CheckboxLabel>
+          </div>
+        );
+      })}
     </ToppingContainer>
   );
 }

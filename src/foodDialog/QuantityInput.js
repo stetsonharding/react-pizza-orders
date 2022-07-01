@@ -10,7 +10,6 @@ import { blitzPizzaTheme } from "../styles/colors";
 
 const QuantityInputStyled = styled.input`
   font-size: 18px;
-  // border: none;
   width: 24px;
   text-align: center;
   border: none;

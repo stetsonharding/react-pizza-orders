@@ -12,6 +12,8 @@ import { formatPrice } from "../Data/MenuData";
 
 import { useQuanity } from "../Hooks/useQuantity";
 
+import { useToppings } from "../Hooks/useToppings";
+
 const Dialog = styled.div`
   width: 500px;
 
@@ -28,7 +30,7 @@ const Dialog = styled.div`
 export const DialogInformation = styled.div`
   //border: 2px solid blue;
   overflow: auto;
-  min-height: 100px;
+  min-height: 40px;
   padding: 10px 40px;
 `;
 
@@ -85,6 +87,7 @@ export function getPrice(order) {
 
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuanity(openFood && openFood.quantity);
+  const toppings = useToppings(openFood.toppings);
 
   //Close Dialog box
   const CloseDialog = () => {
@@ -94,17 +97,13 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const order = {
     ...openFood,
     quantity: quantity.value,
+    toppings: toppings.toppings,
   };
 
   const AddToOrder = () => {
     setOrders([...orders, order]);
     CloseDialog();
   };
-
-  //shows and hides extra toppings based on if food selection is pizza or not.
-  function hasToppings(food) {
-    return food.section === "Pizza";
-  }
 
   return (
     openFood && (
@@ -119,10 +118,11 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
           </DialogInformation>
 
           <DialogInformation>
-            {hasToppings(openFood) && (
+            {/* Show toppings grid if a pizza is clicked on. */}
+            {openFood.section === "Pizza" && (
               <>
                 <h3>Would you like to add extra Toppings?</h3>
-                <Toppings />
+                <Toppings {...toppings} />
               </>
             )}
           </DialogInformation>
