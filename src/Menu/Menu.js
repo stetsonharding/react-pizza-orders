@@ -4,7 +4,6 @@ import { FoodGrid, FoodImage, FoodLabel } from "../MenuGrid/MenuGrid";
 
 //format price function
 import { formatPrice } from "../Data/MenuData";
-
 import { foodSections } from "../Data/MenuData";
 
 const FoodMenuStyled = styled.div`

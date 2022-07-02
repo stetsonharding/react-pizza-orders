@@ -3,11 +3,6 @@ import styled from "styled-components";
 import { Title } from "../styles/title";
 import { blitzPizzaTheme } from "../styles/colors";
 
-// const QuantityContainer = styled.div`
-//   height: 75px;
-//   border: 2px solid red;
-// `;
-
 const QuantityInputStyled = styled.input`
   font-size: 18px;
   width: 24px;

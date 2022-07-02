@@ -10,8 +10,8 @@ import { Toppings } from "./Toppings";
 //format price function
 import { formatPrice } from "../Data/MenuData";
 
+//hooks
 import { useQuanity } from "../Hooks/useQuantity";
-
 import { useToppings } from "../Hooks/useToppings";
 
 const Dialog = styled.div`
