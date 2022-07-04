@@ -39,8 +39,22 @@ const OrderItem = styled.div`
   display: flex;
 `;
 
+const Toppings = styled.div`
+  width: 300px;
+  padding: 10px;
+  color: grey;
+  font-size: 10px;
+`;
+
 export function Order({ orders }) {
   let TAX_RATE = 0.1;
+
+  function getToppings(order) {
+    return order.toppings
+      .filter((topping) => topping.checked === true)
+      .map((item) => item.name)
+      .join(", ");
+  }
 
   //subTotal
   const subTotal = orders.reduce((total, order) => {
@@ -66,6 +80,8 @@ export function Order({ orders }) {
                 <div />
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
+
+              <Toppings>{getToppings(order)}</Toppings>
             </OrderContainer>
           ))}
           <OrderContainer>

@@ -8,7 +8,7 @@ export function useQuanity(defaultQuantity) {
       return;
     }
     setValue(e.target.value);
-    console.log(parseInt(e.target.value));
+    parseInt(e.target.value);
   }
 
   return {

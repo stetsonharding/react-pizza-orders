@@ -18,7 +18,6 @@ const CheckboxLabel = styled.label`
 `;
 
 export function Toppings({ toppings, checkTopping }) {
-  console.log(toppings);
   return (
     <ToppingContainer>
       {toppings.map((topping, index) => {
