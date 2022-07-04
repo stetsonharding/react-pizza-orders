@@ -1,3 +1,4 @@
+//Formatting price for USD.
 export function formatPrice(price) {
   return price.toLocaleString("en-US", {
     style: "currency",
