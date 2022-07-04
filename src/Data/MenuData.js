@@ -63,6 +63,13 @@ export const MenuData = [
     section: "Meats",
     price: 19.99,
   },
+  {
+    name: "Soda",
+    price: 1,
+    img: "/assets/Menu-Items/Beverage.PNG",
+    section: "beverages",
+    beverages: ["Coke", "Sprite", "Dr. Pepper"],
+  },
 ];
 
 /*Split Menu Data in to food sections*/
