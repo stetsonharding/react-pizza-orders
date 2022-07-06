@@ -6,6 +6,7 @@ import { Title } from "../styles/title";
 
 import { QuantityInput } from "./QuantityInput";
 import { Toppings } from "./Toppings";
+import { Beverage } from "./Beverage";
 
 //format price function
 import { formatPrice } from "../Data/MenuData";
@@ -13,6 +14,7 @@ import { formatPrice } from "../Data/MenuData";
 //hooks
 import { useQuanity } from "../Hooks/useQuantity";
 import { useToppings } from "../Hooks/useToppings";
+import { useBeverage } from "../Hooks/useBeverage";
 
 const Dialog = styled.div`
   width: 500px;
@@ -30,7 +32,7 @@ const Dialog = styled.div`
 export const DialogInformation = styled.div`
   //border: 2px solid blue;
   overflow: auto;
-  min-height: 40px;
+  min-height: 10px;
   padding: 10px 40px;
   margin-bottom: 10px;
 `;
@@ -89,6 +91,7 @@ export function getPrice(order) {
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuanity(openFood && openFood.quantity);
   const toppings = useToppings(openFood.toppings);
+  const beverageRadio = useBeverage(openFood.beverages);
 
   //Close Dialog box
   const CloseDialog = () => {
@@ -99,6 +102,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     ...openFood,
     quantity: quantity.value,
     toppings: toppings.toppings,
+    beverage: beverageRadio.value,
   };
 
   const AddToOrder = () => {
@@ -119,12 +123,16 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
           </DialogInformation>
 
           <DialogInformation>
-            {/* Show toppings grid if a pizza is clicked on. */}
+            {/* Show toppings grid if a pizza card is clicked on. */}
             {openFood.section === "Pizza" && (
               <>
                 <h3>Would you like to add extra Toppings?</h3>
                 <Toppings {...toppings} />
               </>
+            )}
+
+            {openFood.section === "Beverages" && (
+              <Beverage openFood={openFood} beverageRadio={beverageRadio} />
             )}
           </DialogInformation>
 

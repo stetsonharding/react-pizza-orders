@@ -67,7 +67,7 @@ export const MenuData = [
     name: "Soda",
     price: 1,
     img: "/assets/Menu-Items/Beverage.PNG",
-    section: "beverages",
+    section: "Beverages",
     beverages: ["Coke", "Sprite", "Dr. Pepper"],
   },
 ];
