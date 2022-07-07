@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export function useBeverage(defaultChoice) {
-  const [beverageValue, setBeverageValue] = useState(defaultChoice);
+export function useBeverage(Default) {
+  const [beverageValue, setBeverageValue] = useState(Default);
 
   function onChange(e) {
-    setBeverageValue(e.target.value);
-    console.log("hi");
+    // setBeverageValue(e.target.value)
+    console.log("Hello");
   }
 
   return {

@@ -10,6 +10,7 @@ const Label = styled.label`
 `;
 
 export function Beverage({ openFood, beverageRadio }) {
+  console.log(beverageRadio.onChange);
   return (
     <>
       <h3>Choose a beverage</h3>

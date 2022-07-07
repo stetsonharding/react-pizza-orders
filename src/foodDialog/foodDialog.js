@@ -93,8 +93,6 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const toppings = useToppings(openFood.toppings);
   const beverageRadio = useBeverage(openFood.beverage);
 
-  console.log(beverageRadio.value);
-
   //Close Dialog box
   const CloseDialog = () => {
     setOpenFood();
@@ -104,7 +102,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     ...openFood,
     quantity: quantity.value,
     toppings: toppings.toppings,
-    beverage: beverageRadio.value,
+    beverage: beverageRadio.beverageValue,
   };
 
   const AddToOrder = () => {
