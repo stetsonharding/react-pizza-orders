@@ -23,8 +23,8 @@ export function FoodMenu({ openFood, setOpenFood }) {
           <div key={sectionsName}>
             <h2>{sectionsName}</h2>
             <FoodGrid>
-              {foodItems.map((item) => (
-                <div key={item.id}>
+              {foodItems.map((item, index) => (
+                <div key={index}>
                   <FoodImage onClick={() => setOpenFood(item)} img={item.img}>
                     <FoodLabel>
                       <div> {item.name}</div>

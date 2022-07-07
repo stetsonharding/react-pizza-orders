@@ -56,6 +56,8 @@ export function Order({ orders }) {
       .join(", ");
   }
 
+  console.log(orders);
+
   //subTotal
   const subTotal = orders.reduce((total, order) => {
     return total + getPrice(order);
@@ -80,8 +82,8 @@ export function Order({ orders }) {
                 <div />
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
-
               <Toppings>{getToppings(order)}</Toppings>
+              {order.beverage && <OrderItem>{order.beverage}</OrderItem>}
             </OrderContainer>
           ))}
           <OrderContainer>

@@ -91,7 +91,9 @@ export function getPrice(order) {
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuanity(openFood && openFood.quantity);
   const toppings = useToppings(openFood.toppings);
-  const beverageRadio = useBeverage(openFood.beverages);
+  const beverageRadio = useBeverage(openFood.beverage);
+
+  console.log(beverageRadio.value);
 
   //Close Dialog box
   const CloseDialog = () => {
@@ -131,7 +133,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
               </>
             )}
 
-            {openFood.section === "Beverages" && (
+            {openFood.beverages && (
               <Beverage openFood={openFood} beverageRadio={beverageRadio} />
             )}
           </DialogInformation>
