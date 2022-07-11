@@ -46,7 +46,7 @@ const Toppings = styled.div`
   font-size: 10px;
 `;
 
-export function Order({ orders, setOrders }) {
+export function Order({ orders, setOrders, setOpenFood }) {
   let TAX_RATE = 0.1;
 
   //getting all extra toppings checked
@@ -68,7 +68,6 @@ export function Order({ orders, setOrders }) {
     updatedOrders.splice(index, 1);
     setOrders(updatedOrders);
   }
-  console.log(orders);
 
   const tax = subTotal * TAX_RATE;
 
@@ -83,7 +82,7 @@ export function Order({ orders, setOrders }) {
           <OrderContainer>Your Order:</OrderContainer>
           {orders.map((order, index) => (
             <OrderContainer key={order.id}>
-              <OrderItem>
+              <OrderItem onClick={() => setOpenFood({ ...order, index })}>
                 <div>{order.quantity}</div>
                 <div>{order.name}</div>
                 <div

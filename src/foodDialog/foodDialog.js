@@ -93,6 +93,8 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const toppings = useToppings(openFood.toppings);
   const beverageRadio = useBeverage(openFood.beverage);
 
+  const isEditing = openFood.index > -1;
+
   //Close Dialog box
   const CloseDialog = () => {
     setOpenFood();
@@ -109,6 +111,12 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     setOrders([...orders, order]);
     CloseDialog();
   };
+
+  function EditOrder() {
+    const newOrders = [...orders];
+    newOrders[order.index] = order;
+    setOrders(newOrders);
+  }
 
   return (
     openFood && (
@@ -137,7 +145,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
           </DialogInformation>
 
           <DialogFooter>
-            <ConfirmButton onClick={AddToOrder}>
+            <ConfirmButton onClick={isEditing ? EditOrder : AddToOrder}>
               {`Update Order: ${formatPrice(getPrice(order))}`}
             </ConfirmButton>
           </DialogFooter>
