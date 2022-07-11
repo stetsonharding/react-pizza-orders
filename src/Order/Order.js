@@ -46,9 +46,10 @@ const Toppings = styled.div`
   font-size: 10px;
 `;
 
-export function Order({ orders }) {
+export function Order({ orders, setOrders }) {
   let TAX_RATE = 0.1;
 
+  //getting all extra toppings checked
   function getToppings(order) {
     return order.toppings
       .filter((topping) => topping.checked === true)
@@ -56,12 +57,18 @@ export function Order({ orders }) {
       .join(", ");
   }
 
-  console.log(orders);
-
   //subTotal
   const subTotal = orders.reduce((total, order) => {
     return total + getPrice(order);
   }, 0);
+
+  //Delete item from order
+  function DeleteItem(index) {
+    const updatedOrders = [...orders];
+    updatedOrders.splice(index, 1);
+    setOrders(updatedOrders);
+  }
+  console.log(orders);
 
   const tax = subTotal * TAX_RATE;
 
@@ -74,12 +81,17 @@ export function Order({ orders }) {
       ) : (
         <OrderContent>
           <OrderContainer>Your Order:</OrderContainer>
-          {orders.map((order) => (
+          {orders.map((order, index) => (
             <OrderContainer key={order.id}>
               <OrderItem>
                 <div>{order.quantity}</div>
                 <div>{order.name}</div>
-                <div />
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={() => DeleteItem(index)}
+                >
+                  🗑️
+                </div>
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
               <Toppings>{getToppings(order)}</Toppings>
