@@ -30,6 +30,18 @@ const OrderContent = styled(DialogInformation)`
 const OrderContainer = styled.div`
   padding: 10px 0px;
   border-bottom: 1px solid black;
+  ${({ editable }) =>
+    editable
+      ? `
+  &:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+  }
+  
+  `
+      : `
+      pointer-events: none;
+  `}
 `;
 const OrderItem = styled.div`
   padding: 10px 0px;
@@ -81,13 +93,18 @@ export function Order({ orders, setOrders, setOpenFood }) {
         <OrderContent>
           <OrderContainer>Your Order:</OrderContainer>
           {orders.map((order, index) => (
-            <OrderContainer key={order.id}>
-              <OrderItem onClick={() => setOpenFood({ ...order, index })}>
+            <OrderContainer editable key={order.id}>
+              <OrderItem onClick={(e) => setOpenFood({ ...order, index })}>
                 <div>{order.quantity}</div>
-                <div>{order.name}</div>
+                <div>
+                  {order.name} <br />
+                </div>
                 <div
                   style={{ cursor: "pointer" }}
-                  onClick={() => DeleteItem(index)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    DeleteItem(index);
+                  }}
                 >
                   🗑️
                 </div>

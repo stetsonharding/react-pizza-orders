@@ -107,15 +107,18 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     beverage: beverageRadio.beverageValue,
   };
 
+  //add item to order
   const AddToOrder = () => {
     setOrders([...orders, order]);
     CloseDialog();
   };
 
+  //edit order
   function EditOrder() {
     const newOrders = [...orders];
     newOrders[order.index] = order;
     setOrders(newOrders);
+    CloseDialog();
   }
 
   return (
@@ -146,7 +149,9 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
 
           <DialogFooter>
             <ConfirmButton onClick={isEditing ? EditOrder : AddToOrder}>
-              {`Update Order: ${formatPrice(getPrice(order))}`}
+              {isEditing
+                ? "Edit Order"
+                : `Add to Order: ${formatPrice(getPrice(order))}`}
             </ConfirmButton>
           </DialogFooter>
         </Dialog>
