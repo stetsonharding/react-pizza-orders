@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-pizza-orders/static/css/main.31d6cfe0.css",
+    "main.js": "/react-pizza-orders/static/js/main.3aa15910.js",
+    "static/js/787.cd9a0774.chunk.js": "/react-pizza-orders/static/js/787.cd9a0774.chunk.js",
+    "index.html": "/react-pizza-orders/index.html",
+    "main.3aa15910.js.map": "/react-pizza-orders/static/js/main.3aa15910.js.map",
+    "787.cd9a0774.chunk.js.map": "/react-pizza-orders/static/js/787.cd9a0774.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.3aa15910.js"
+  ]
+}
