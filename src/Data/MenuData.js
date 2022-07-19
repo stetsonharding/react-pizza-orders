@@ -17,7 +17,7 @@ export const MenuData = [
   {
     id: 2,
     name: "Blitz Burger",
-    img: "/assets/Menu-Items/Burger2.jpg",
+    img: "/assets/Menu-Items/burger2.jpg",
     section: "sandwitch",
     price: 13.5,
   },
