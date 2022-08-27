@@ -1,3 +1,13 @@
+import burger from "../assets/Menu-Items/Burger.jpeg";
+import burger2 from "../assets/Menu-Items/burger2.jpg";
+import chickenPizza from "../assets/Menu-Items/ChickenPizza.jpg";
+import pizza2 from "../assets/Menu-Items/pizza2.jpeg";
+import ribs from "../assets/Menu-Items/Ribs.jpeg";
+import salad from "../assets/Menu-Items/salad.jpeg";
+import sandwitch from "../assets/Menu-Items/sandwitch.jpeg";
+import steak from "../assets/Menu-Items/steak.jpeg";
+import beverage from "../assets/Menu-Items/Beverage.PNG";
+
 //Formatting price for USD.
 export function formatPrice(price) {
   return price.toLocaleString("en-US", {
@@ -10,63 +20,63 @@ export const MenuData = [
   {
     id: 1,
     name: "Blitz Classic Burger",
-    img: "/assets/Menu-Items/Burger.jpeg",
+    img: `${burger}`,
     section: "sandwitch",
     price: 10.5,
   },
   {
     id: 2,
     name: "Blitz Burger",
-    img: "/assets/Menu-Items/burger2.jpg",
+    img: `${burger2}`,
     section: "sandwitch",
     price: 13.5,
   },
   {
     id: 3,
     name: "Blitz Chicken Pizza",
-    img: "/assets/Menu-Items/ChickenPizza.jpg",
+    img: `${chickenPizza}`,
     section: "Pizza",
     price: 13.84,
   },
   {
     id: 4,
     name: "Blitz Custom Pizza",
-    img: "/assets/Menu-Items/pizza2.jpeg",
+    img: `${pizza2}`,
     section: "Pizza",
     price: 13.5,
   },
   {
     id: 5,
     name: "Blitz Ribs",
-    img: "/assets/Menu-Items/Ribs.jpeg",
+    img: `${ribs}`,
     section: "Meats",
     price: 17.99,
   },
   {
     id: 6,
     name: "Blitz Salad",
-    img: "/assets/Menu-Items/salad.jpeg",
+    img: `${salad}`,
     section: "Salad",
     price: 8.99,
   },
   {
     id: 7,
     name: "Blitz Chicken Sandwitch",
-    img: "/assets/Menu-Items/sandwitch.jpeg",
+    img: `${sandwitch}`,
     section: "sandwitch",
     price: 10.99,
   },
   {
     id: 8,
     name: "Blitz Steak & Fries",
-    img: "/assets/Menu-Items/steak.jpeg",
+    img: `${steak}`,
     section: "Meats",
     price: 19.99,
   },
   {
     name: "Soda",
     price: 1,
-    img: "/assets/Menu-Items/Beverage.PNG",
+    img: `${beverage}`,
     section: "Beverages",
     beverages: ["Coke", "Sprite", "Dr. Pepper"],
   },
