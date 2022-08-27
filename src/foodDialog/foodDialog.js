@@ -27,6 +27,12 @@ const Dialog = styled.div`
   left: calc(50% - 250px);
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 500px) {
+    width: 97%;
+    left: 7px;
+    z-index: 12;
+  }
 `;
 
 export const DialogInformation = styled.div`

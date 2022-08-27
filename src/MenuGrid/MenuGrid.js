@@ -5,6 +5,12 @@ export const FoodGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    width: 90%;
+    padding: 1px;
+  }
 `;
 
 export const FoodImage = styled.div`
@@ -26,6 +32,10 @@ export const FoodImage = styled.div`
     cursor: pointer;
     opacity: 0.8;
     margin-top: 0px;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
   }
 `;
 

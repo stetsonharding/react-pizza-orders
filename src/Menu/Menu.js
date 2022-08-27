@@ -9,6 +9,11 @@ import { foodSections } from "../Data/MenuData";
 const FoodMenuStyled = styled.div`
   margin: 0 600px 50px 20px;
   height: 1250px auto;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    margin: 0px;
+  }
 `;
 
 export function FoodMenu({ openFood, setOpenFood }) {
