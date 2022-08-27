@@ -1,14 +1,24 @@
 {
   "files": {
     "main.css": "/react-pizza-orders/static/css/main.31d6cfe0.css",
-    "main.js": "/react-pizza-orders/static/js/main.3aa15910.js",
+    "main.js": "/react-pizza-orders/static/js/main.d293cb30.js",
     "static/js/787.cd9a0774.chunk.js": "/react-pizza-orders/static/js/787.cd9a0774.chunk.js",
+    "static/media/blitzPizzaBanner.jpg": "/react-pizza-orders/static/media/blitzPizzaBanner.2ef755ef61b809ed9fad.jpg",
+    "static/media/ChickenPizza.jpg": "/react-pizza-orders/static/media/ChickenPizza.9b82cd5a289766cfde52.jpg",
+    "static/media/burger2.jpg": "/react-pizza-orders/static/media/burger2.f2c4f02b121bf17762e5.jpg",
+    "static/media/Beverage.PNG": "/react-pizza-orders/static/media/Beverage.7b01e9fa724adaf9cc2d.PNG",
+    "static/media/steak.jpeg": "/react-pizza-orders/static/media/steak.5ec9d91690d2b680db85.jpeg",
+    "static/media/Ribs.jpeg": "/react-pizza-orders/static/media/Ribs.996511a8d7665de9a2a9.jpeg",
+    "static/media/salad.jpeg": "/react-pizza-orders/static/media/salad.7e2345ad3e66e5eaa790.jpeg",
+    "static/media/Burger.jpeg": "/react-pizza-orders/static/media/Burger.7691813b1f60b46136ce.jpeg",
+    "static/media/sandwitch.jpeg": "/react-pizza-orders/static/media/sandwitch.8e63e7521f4fb218703e.jpeg",
+    "static/media/pizza2.jpeg": "/react-pizza-orders/static/media/pizza2.504c9bea73bdb87ec560.jpeg",
     "index.html": "/react-pizza-orders/index.html",
-    "main.3aa15910.js.map": "/react-pizza-orders/static/js/main.3aa15910.js.map",
+    "main.d293cb30.js.map": "/react-pizza-orders/static/js/main.d293cb30.js.map",
     "787.cd9a0774.chunk.js.map": "/react-pizza-orders/static/js/787.cd9a0774.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.3aa15910.js"
+    "static/js/main.d293cb30.js"
   ]
 }
