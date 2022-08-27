@@ -19,6 +19,11 @@ export const OrderStyled = styled.div`
   height: calc(100% - 55px);
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 700px) {
+    position: relative;
+    width: 100%;
+  }
 `;
 
 const OrderContent = styled(DialogInformation)`
