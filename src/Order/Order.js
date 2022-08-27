@@ -20,7 +20,7 @@ export const OrderStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 700px) {
+  @media (max-width: 500px) {
     position: relative;
     width: 100%;
   }
